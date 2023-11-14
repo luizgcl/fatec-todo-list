@@ -7,8 +7,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="h-screen w-screen bg-zinc-700 text-white">
-  <header>
-    <nav class="flex flex-row w-full bg-zinc-900 p-2">
+  <header class="w-screen">
+    <nav class="flex flex-col md:flex-row w-full bg-zinc-900 p-2">
       <a href="#"><h1 class="mx-2 text-xl font-black">Todo List</h1></a>
       <ul class="flex flex-1 justify-center gap-2">
         <li>
@@ -39,7 +39,7 @@
     <hr/>
     <section class="mt-2 flex flex-col items-center">
       <h2 class="text-xl font-bold mb-2">Lista de Tarefas</h2>
-      <div class="border rounded-lg shadow overflow-hidden dark:border-gray-700 dark:shadow-gray-900 w-1/2">
+      <div class="border rounded-lg shadow overflow-scroll dark:border-gray-700 dark:shadow-gray-900 w-screen md:w-1/2">
         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
           <thead class="bg-gray-50 dark:bg-gray-700">
             <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Tarefa</th>
