@@ -42,15 +42,29 @@ function updateTaskList() {
     const row = document.createElement("tr");
 
     row.innerHTML = `
-      <td>${task.description}</td>
-      <td>${formatDate(task.insertedAt)}</td>
-      <td>${task.finishedAt ? formatDate(task.finishedAt) : "-"}</td>
+      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">${
+        task.description
+      }</td>
+      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">${formatDate(
+        task.insertedAt
+      )}</td>
+      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">${
+        task.finishedAt ? formatDate(task.finishedAt) : "-"
+      }</td>
       ${
         task.finishedAt
-          ? `<td><a id="${task.id}" class="uncheck">Retomar</a></td>`
-          : `<td><a id="${task.id}" class="finish">Finalizar</a></td>`
+          ? `<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+              <a id="${task.id}" class="uncheck cursor-pointer hover:text-emerald-200">Retomar</a>
+            </td>`
+          : `<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+              <a id="${task.id}" class="finish cursor-pointer hover:text-red-200">Finalizar</a>
+            </td>`
       }
-      <td><a id="${task.id}" class="delete">Excluir</a></td>
+      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+        <a id="${
+          task.id
+        }" class="delete cursor-pointer hover:text-red-700">Excluir</a>
+      </td>
     `;
 
     listBody.appendChild(row);

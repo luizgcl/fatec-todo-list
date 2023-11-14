@@ -4,41 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="h-screen w-screen bg-zinc-700 text-white">
   <header>
-    <nav>
-      <h1>Todo List</h1>
-      <ul>
+    <nav class="flex flex-row w-full bg-zinc-900 p-2">
+      <a href="#"><h1 class="mx-2 text-xl font-black">Todo List</h1></a>
+      <ul class="flex flex-1 justify-center gap-2">
         <li>
-          <a href="#">Todo List</a>
+          <a href="#" class="font-medium hover:text-cyan-400 transition-colors">Todo List</a>
         </li>
         <li>
-          <a href="/pages/documentacao/">Documentação</a>
+          <a href="/pages/documentacao/" class="font-medium hover:text-cyan-400 transition-colors">Documentação</a>
         </li>
       </ul>
     </nav>
   </header>
-  <main>
-    <section>
-      <form id="form">
-        <label for="task">Tarefa</label>
-        <input id="task" name="task" type="text" placeholder="Descrição da Tarefa..." />
-        <input type="submit" value="+"/>
+  <main class="mt-3">
+    <section class="flex justify-center">
+      <form id="form" class="flex flex-col mb-2 border rounded-lg shadow overflow-hidden dark:border-gray-700 dark:shadow-gray-900 p-4">
+        <legend class="font-medium text-md mb-2">Cadastro de Tarefa</legend>
+        <label for="task" class="text-sm font-medium">Descrição da Tarefa</label>
+        <span>
+          <input 
+            id="task" 
+            name="task" 
+            type="text" 
+            class="rounded-md px-2 focus:ring-0 focus:outline-1 outline-blue-500 text-gray-950"
+            placeholder="Descrição da Tarefa..." />
+          <input type="submit" value="+" class="px-3 bg-cyan-400 rounded-md hover:cursor-pointer"/>
+        </span>
       </form>
     </section>
-    <section>
-      <h2>Lista de Tarefas</h2>
-      <table border="1" cellpadding="1">
-        <thead>
-          <th>Tarefa</th>
-          <th>Adicionada em</th>
-          <th>Finalizada em</th>
-          <th colspan="2">Ações</th>
-        </thead>
-        <tbody id="table-body">
-        </tbody>
-      </table>
+    <hr/>
+    <section class="mt-2 flex flex-col items-center">
+      <h2 class="text-xl font-bold mb-2">Lista de Tarefas</h2>
+      <div class="border rounded-lg shadow overflow-hidden dark:border-gray-700 dark:shadow-gray-900 w-1/2">
+        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+          <thead class="bg-gray-50 dark:bg-gray-700">
+            <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Tarefa</th>
+            <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Adicionada em</th>
+            <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Finalizada em</th>
+            <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-gray-400" colspan="2">Ações</th>
+          </thead>
+          <tbody id="table-body" class="divide-y divide-gray-200 dark:divide-gray-700">
+          </tbody>
+        </table>
+      </div>
     </section>
   </main>
   <script type="module" src="./js/todo/index.js"></script>
