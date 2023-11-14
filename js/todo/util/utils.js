@@ -1,6 +1,7 @@
 export function randomID() {
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let randomID = '';
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let randomID = "";
 
   for (let i = 0; i < 8; i++) {
     const randomIndex = Math.floor(Math.random() * characters.length);
@@ -13,5 +14,8 @@ export function randomID() {
 export function formatDate(dateToFormat) {
   const date = new Date(dateToFormat);
 
-  return `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`
+  return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date
+    .getHours()
+    .toString()
+    .padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
 }
