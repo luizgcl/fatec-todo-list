@@ -7,7 +7,7 @@ export class TaskRepository {
   }
 
   static fetchTasks() {
-    this.tasks = JSON.parse(localStorage.getItem('tasks'));
+    this.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     return this.tasks;
   }
 
