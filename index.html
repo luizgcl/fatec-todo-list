@@ -4,8 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo List</title>
+  <script type="module" src="./js/entities/Task.js"></script>
+  <script type="module" src="./js/repositories/TaskRepository.js"></script>
+  <script type="module" src="./js/utils/utils.js"></script>
+  <script type="module" src="./js/index.js"></script>
 </head>
 <body>
-  
+  <header>
+    <nav>
+      <h1>Todo List</h1>
+      <ul>
+        <li>
+          <a href="#">Todo List</a>
+        </li>
+        <li>
+          <a href="/pages/documentacao/">Documentação</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <form onsubmit="event.preventDefault();">
+        <label for="task">Tarefa</label>
+        <input id="task" name="task" type="text" placeholder="Descrição da Tarefa..." />
+        <input type="submit" value="+" onclick="addTask()" />
+      </form>
+    </section>
+    <section>
+      <h2>Lista de Tarefas</h2>
+      <table border="1" cellpadding="1">
+        <thead>
+          <th>Tarefa</th>
+          <th>Adicionada em</th>
+          <th>Finalizada em</th>
+          <th colspan="2">Ações</th>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+      </table>
+    </section>
+  </main>
 </body>
 </html>
